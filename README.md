@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Minjae Kim — Automotive Designer Portfolio
+
+A premium digital exhibition site for automotive designer Minjae Kim, built with Next.js, Tailwind CSS, Framer Motion, GSAP, Lenis, and Payload CMS.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
+cp .env.example .env   # set PAYLOAD_SECRET to a real secret
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit:
+- `http://localhost:3000` — the public site
+- `http://localhost:3000/admin` — the CMS admin panel (create your first admin user on first visit)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Seeding example data
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To populate the CMS with the placeholder projects and 3D works used during development:
 
-## Learn More
+```bash
+npm run seed
+```
 
-To learn more about Next.js, take a look at the following resources:
+## CMS-managed content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Site content (projects, 3D works, images, specs, persona info, etc.) is managed through Payload CMS at `/admin`. Collections:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Projects** — title, slug, category, terrain/vehicle type, hero/side/front/rear images, persona, reference images, speedform images, specifications, process PDF, gallery, keywords, 3D modeling links.
+- **3D Works** — title, slug, software used, beauty/clay/wireframe/topology renders.
+- **Media** — uploaded images and PDFs.
+- **Users** — admin accounts.
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 15 (App Router) + TypeScript
+- Tailwind CSS
+- Framer Motion + GSAP
+- Lenis (smooth scroll)
+- Payload CMS 3 (SQLite)
+- next-themes (dark/light mode)
